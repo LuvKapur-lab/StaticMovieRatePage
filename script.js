@@ -1,5 +1,3 @@
-// https://www.omdbapi.com/?t=spiderman&apikey=13f8be2c
-
 //fetching data
 async function fetchData() {
   try {
