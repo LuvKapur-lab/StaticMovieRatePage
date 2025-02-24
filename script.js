@@ -1,5 +1,8 @@
 //fetching data
 async function fetchData() {
+  let load = document.getElementById("loading");
+  load.style.display = "block";
+
   try {
     let movieName = userInput.value.trim().toLowerCase();
 
@@ -11,6 +14,13 @@ async function fetchData() {
     }
     const data = await response.json();
     console.log(data);
+    
+    if(data.Response === "False"){
+      load.textContent = "Movie not found";
+      display.style.display = "none"
+    }
+
+    load.style.display = "none";
 
     const MIMG = data.Poster;
     let poster = document.getElementById("movieImg");
@@ -32,18 +42,27 @@ async function fetchData() {
     let runtime = document.getElementById("runtime");
     runtime.textContent = `Duration: ${MRUN}`;
 
-    const MGEN = data.Genre
+    const MGEN = data.Genre;
     let gen = document.getElementById("genera");
-    gen.textContent = `Genre: ${MGEN}`
+    gen.textContent = `Genre: ${MGEN}`;
 
     const MRATE = data.imdbRating;
     let rating = document.getElementById("rate");
     rating.textContent = `IMBD Rating: ${MRATE}`;
+
+    if(MRATE >= 5){
+      let time = document.querySelector(".time")
+      time.style.color = "green"
+    }else{
+      time.style.color = "orange";
+    }
+
+
+
   } catch (error) {
     console.error(error);
   }
 }
-
 //grabbing the elements
 let search = document.getElementById("searchBtn");
 let userInput = document.getElementById("inputField");
@@ -53,4 +72,12 @@ let displayDataLeft = document.querySelector(".displayLeft");
 search.addEventListener("click", function () {
   fetchData();
   userInput.value = ""; //clearing the input
+});
+
+// added enter functionality
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") {
+    fetchData();
+    userInput.value = ""; //clearing the input
+  }
 });
