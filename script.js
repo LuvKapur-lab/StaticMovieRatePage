@@ -16,7 +16,7 @@ async function fetchData() {
     console.log(data);
     
     if(data.Response === "False"){
-      load.textContent = "Movie not found";
+      load.textContent = "Movie/Series not found.";
       display.style.display = "none"
     }
 
