@@ -1,0 +1,239 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-align: center;
+  background-color: #222831;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  margin-bottom: 80px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+input {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+
+  font-size: 16px;
+  font-weight: 500;
+}
+
+button {
+  padding: 10px 20px;
+  cursor: pointer;
+  background: #31363f;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+
+  padding: 20px;
+  border: 1px solid white;
+  border-radius: 10px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 1);
+  background-color: #fff;
+
+  transition: all 0.4s ease-in-out;
+}
+
+.display:hover {
+  transform: scale(1.1);
+}
+
+.displayLeft {
+  color: #222831;
+  padding: 20px;
+}
+.displayLeft h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: left;
+}
+.displayLeft #movieDis {
+  text-align: left;
+}
+.displayLeft #rate {
+  text-align: left;
+  font-size: 20px;
+  margin-top: 40px;
+  font-weight: 700;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.display img {
+  height: 200px;
+  width: 100px;
+  object-fit: cover;
+  margin: auto;
+}
+
+.time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: left;
+  margin-top: 10px;
+  color: rgb(255, 102, 0);
+}
+
+#runtime {
+  font-weight: bold;
+}
+#genera {
+  font-weight: bold;
+}
+
+/* media queries for responsive web desgin */
+
+@media (max-width: 600px) {
+  .container {
+    max-width: 350px;
+    padding: 10px;
+  }
+  input {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    max-width: 70%;
+    padding: 10px;
+
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .display {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+
+    text-align: center;
+    max-width: 350px;
+    margin: auto;
+
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 1);
+    background-color: #fff;
+
+    transition: all 0.4s ease-in-out;
+  }
+  .display img {
+    min-width: 300px;
+    min-height: 400px;
+    object-fit: cover;
+  }
+  .displayLeft h1 {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  .displayLeft {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+
+    color: #222831;
+    padding: 20px;
+  }
+
+  .time {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: 15px;
+    color: rgb(255, 102, 0);
+  }
+
+  #rate {
+    margin: 5px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 750px;
+    padding: 20px;
+  }
+  #searchBtn{
+    padding: 15px 30px;
+  }
+  input {
+    cursor: pointer;
+    outline: none;
+    border: none;
+    max-width: 100%;
+    padding: 10px;
+
+    font-size: 16px;
+    font-weight: 500;
+  }
+  .display {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    /* flex-direction: column; */
+
+    text-align: center;
+    max-width: 750px;
+    margin: auto;
+
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 1);
+    background-color: #fff;
+
+    transition: all 0.4s ease-in-out;
+  }
+  .display img {
+    min-width: 300px;
+    min-height: 400px;
+    object-fit: cover;
+  }
+  .displayLeft h1 {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    text-align: left;
+    margin-bottom: 10px;
+  }
+
+  .displayLeft {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: left;
+
+    color: #222831;
+    padding: 20px;
+  }
+
+  #rate {
+    margin: 5px;
+  }
+}
